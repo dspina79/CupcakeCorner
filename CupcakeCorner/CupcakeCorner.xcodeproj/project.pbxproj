@@ -13,6 +13,7 @@
 		550F60EC2595C11900474859 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550F60EB2595C11900474859 /* Preview Assets.xcassets */; };
 		550F60F62598281D00474859 /* ITunesAPIExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60F52598281D00474859 /* ITunesAPIExample.swift */; };
 		550F60FA25982CD900474859 /* FormValidationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60F925982CD900474859 /* FormValidationExample.swift */; };
+		550F60FD25982E8200474859 /* ITunesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60FC25982E8200474859 /* ITunesQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		550F60ED2595C11900474859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		550F60F52598281D00474859 /* ITunesAPIExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAPIExample.swift; sourceTree = "<group>"; };
 		550F60F925982CD900474859 /* FormValidationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationExample.swift; sourceTree = "<group>"; };
+		550F60FC25982E8200474859 /* ITunesQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesQuery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				550F60EA2595C11900474859 /* Preview Content */,
 				550F60F52598281D00474859 /* ITunesAPIExample.swift */,
 				550F60F925982CD900474859 /* FormValidationExample.swift */,
+				550F60FC25982E8200474859 /* ITunesQuery.swift */,
 			);
 			path = CupcakeCorner;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				550F60F62598281D00474859 /* ITunesAPIExample.swift in Sources */,
 				550F60FA25982CD900474859 /* FormValidationExample.swift in Sources */,
+				550F60FD25982E8200474859 /* ITunesQuery.swift in Sources */,
 				550F60E72595C11500474859 /* ContentView.swift in Sources */,
 				550F60E52595C11500474859 /* CupcakeCornerApp.swift in Sources */,
 			);
