@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct FormValidationExample: View {
+    @State private var username = ""
+    @State private var email = ""
+    
+    var disableButton: Bool {
+        username.count < 5 || email.count < 5
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section {
+                TextField("Username", text: $username)
+                TextField("Email", text: $email)
+            }
+            Section {
+                Button("Create Account") {
+                    print("Creating Account...")
+                }
+            }.disabled(disableButton)
+        }
     }
 }
 
