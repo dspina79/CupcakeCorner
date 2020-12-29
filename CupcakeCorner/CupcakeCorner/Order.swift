@@ -22,4 +22,36 @@ class Order: ObservableObject {
             }
         }
     }
+    
+    @Published var name = ""
+    @Published var streetAddress = ""
+    @Published var city = ""
+    @Published var zip = ""
+    
+    var hasValidAddress: Bool {
+        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+            return false
+        }
+        
+        return true
+    }
+    
+    var formattedAddress: String {
+        return "\(name)\n\(streetAddress)\n\(city) - \(zip)"
+    }
+    
+    var cost: Double {
+        var cost = Double(quantity) * 2.00
+        cost += Double(type) / 2.00
+        
+        if extraFrosting {
+            cost += Double(quantity) / 2.00
+        }
+        
+        if addSprinkles {
+            cost += Double(quantity) / 2.00
+        }
+        
+        return cost
+    }
 }
