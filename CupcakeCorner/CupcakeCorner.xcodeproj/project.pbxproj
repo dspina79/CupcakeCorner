@@ -14,6 +14,9 @@
 		550F60F62598281D00474859 /* ITunesAPIExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60F52598281D00474859 /* ITunesAPIExample.swift */; };
 		550F60FA25982CD900474859 /* FormValidationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60F925982CD900474859 /* FormValidationExample.swift */; };
 		550F60FD25982E8200474859 /* ITunesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60FC25982E8200474859 /* ITunesQuery.swift */; };
+		550F6100259AC18300474859 /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60FF259AC18300474859 /* UserClass.swift */; };
+		550F6103259AC1C000474859 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F6102259AC1C000474859 /* Order.swift */; };
+		550F6106259AC5E300474859 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F6105259AC5E300474859 /* AddressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		550F60F52598281D00474859 /* ITunesAPIExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAPIExample.swift; sourceTree = "<group>"; };
 		550F60F925982CD900474859 /* FormValidationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationExample.swift; sourceTree = "<group>"; };
 		550F60FC25982E8200474859 /* ITunesQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesQuery.swift; sourceTree = "<group>"; };
+		550F60FF259AC18300474859 /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
+		550F6102259AC1C000474859 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		550F6105259AC5E300474859 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +66,15 @@
 			children = (
 				550F60E42595C11500474859 /* CupcakeCornerApp.swift */,
 				550F60E62595C11500474859 /* ContentView.swift */,
+				550F60FF259AC18300474859 /* UserClass.swift */,
 				550F60E82595C11900474859 /* Assets.xcassets */,
 				550F60ED2595C11900474859 /* Info.plist */,
 				550F60EA2595C11900474859 /* Preview Content */,
 				550F60F52598281D00474859 /* ITunesAPIExample.swift */,
 				550F60F925982CD900474859 /* FormValidationExample.swift */,
 				550F60FC25982E8200474859 /* ITunesQuery.swift */,
+				550F6102259AC1C000474859 /* Order.swift */,
+				550F6105259AC5E300474859 /* AddressView.swift */,
 			);
 			path = CupcakeCorner;
 			sourceTree = "<group>";
@@ -152,6 +161,9 @@
 				550F60FD25982E8200474859 /* ITunesQuery.swift in Sources */,
 				550F60E72595C11500474859 /* ContentView.swift in Sources */,
 				550F60E52595C11500474859 /* CupcakeCornerApp.swift in Sources */,
+				550F6106259AC5E300474859 /* AddressView.swift in Sources */,
+				550F6100259AC18300474859 /* UserClass.swift in Sources */,
+				550F6103259AC1C000474859 /* Order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

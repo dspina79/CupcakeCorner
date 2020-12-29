@@ -1,29 +1,42 @@
 import SwiftUI
 
-class User: ObservableObject, Codable {
-    enum CodingKeys: CodingKey {
-        case name
-    }
-    
-    @Published var name = "Dave Spina"
-    
-    // for strong type safety
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        name = try container.decode(String.self, forKey: .name)
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(name, forKey: .name)
-    }
-}
-
 struct ContentView: View {
+    @ObservedObject var order = Order()
     var body: some View {
-        VStack {
-            Text("Cupcake Corner")
-                .padding()
+        NavigationView {
+            Form {
+                Section {
+                    Picker("Select your cake type", selection: $order.type) {
+                        ForEach(0..<Order.types.count) {
+                            Text(Order.types[$0])
+                        }
+                    }
+                    Stepper(value: $order.quantity, in: 3...20) {
+                        Text("Number of cakes: \(order.quantity)")
+                    }
+                }
+                
+                Section {
+                    Toggle(isOn: $order.specialRequestEnabled.animation()) {
+                        Text("Any special requests?")
+                    }
+                    
+                    if (order.specialRequestEnabled) {
+                        Toggle(isOn: $order.addSprinkles) {
+                            Text("Sprinkes")
+                        }
+                        Toggle(isOn: $order.extraFrosting) {
+                            Text("Extra frosting")
+                        }
+                    }
+                }
+                Section {
+                    NavigationLink(destination: AddressView(order: order)) {
+                        Text("Delivery Details")
+                    }
+                }
+            }
+            .navigationBarTitle(Text("Cupcake Corner"))
         }
     }
 }
