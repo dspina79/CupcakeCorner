@@ -41,8 +41,8 @@ struct ITunesAPIExample: View {
         let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) {data, response, error in
-            // step 4 here
             if let data = data {
+                print("This is the data: \(data)")
                 if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
                     DispatchQueue.main.async {
                         self.results = decodedResponse.results
