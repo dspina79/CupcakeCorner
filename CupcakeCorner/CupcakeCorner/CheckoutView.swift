@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @ObservedObject var order: Order
+    @ObservedObject var order: NewOrder
     @State private var confirmationMessage = ""
     @State private var showConfirmation = false
+    @State private var showError = false
+    @State private var errorMessage = ""
     
     var body: some View {
         GeometryReader { geo in
@@ -21,17 +23,17 @@ struct CheckoutView: View {
                         .scaledToFit()
                         .frame(width: geo.size.width)
                     
-                    Text("Total cost for Order: $\(order.cost, specifier: "%.2f")")
+                    Text("Total cost for Order: $\(order.orderDetails.cost, specifier: "%.2f")")
                         .font(.title)
                     
                     VStack {
                         Text("Shipping Information")
                             .font(.headline)
-                        Text(order.formattedAddress)
+                        Text(order.orderDetails.formattedAddress)
                     }.padding()
                     
                     Button("Place Order") {
-                        self.placeOrder()
+                       self.placeOrder()
                     }
                     .frame(width: 100, height: 50)
                     .background(LinearGradient(gradient: Gradient(colors: [.white, .orange, .white]), startPoint: .top, endPoint: .bottom))
@@ -41,15 +43,19 @@ struct CheckoutView: View {
                     .padding(.top)
                 }
             }
-        }.navigationBarTitle("Checkout", displayMode: .inline)
-        .alert(isPresented: $showConfirmation) {
-            Alert(title: Text("Thank You!"), message: Text(confirmationMessage), dismissButton: .default(Text("Ok")))
         }
+        .navigationBarTitle("Checkout", displayMode: .inline)
+        .alert(isPresented: $showConfirmation) {
+            Alert(title: Text(showError ? "Error" : "Thank You!"), message: Text(showError ? errorMessage: confirmationMessage), dismissButton: .default(Text(showError ? "Understood" : "Ok")))
+            }
     }
     
     func placeOrder() {
+        self.showError = false
         guard let encoded = try? JSONEncoder().encode(order) else {
-            print("There was an issue encoding the order")
+            errorMessage = "There was an issue encoding the order"
+            self.showError = true
+            self.showConfirmation = true
             return
         }
         
@@ -61,17 +67,21 @@ struct CheckoutView: View {
         
         URLSession.shared.dataTask(with: request) {data, response, error in
             guard let data = data else {
-                print("There was no data in the response. Error: \(error?.localizedDescription ?? "Unnown Error")")
+                errorMessage = "There was no data in the response. Error: \(error?.localizedDescription ?? "Unnown Error")"
+                self.showError = true
+                self.showConfirmation = true
                 return
             }
 
-            if let decodedOrder = try? JSONDecoder().decode(Order.self, from: data) {
+            if let decodedOrder = try? JSONDecoder().decode(NewOrder.self, from: data) {
                 self.confirmationMessage = """
-                    Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) is on its way.
+                    Your order for \(decodedOrder.orderDetails.quantity)x \(Order.types[decodedOrder.orderDetails.type].lowercased()) is on its way.
                     """
                 self.showConfirmation = true
             } else {
-                print("Invalid response from the server.")
+                errorMessage =  "Invalid response from the server."
+                self.showError = true
+                self.showConfirmation = true
             }
         }.resume()
     }
@@ -79,6 +89,6 @@ struct CheckoutView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(order: Order())
+        CheckoutView(order: NewOrder())
     }
 }

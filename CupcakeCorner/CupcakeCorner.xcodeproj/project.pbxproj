@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5508C571259D693D006DDC12 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508C570259D693D006DDC12 /* OrderDetails.swift */; };
+		5508C574259D69B4006DDC12 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508C573259D69B4006DDC12 /* NewOrder.swift */; };
 		550F60E52595C11500474859 /* CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60E42595C11500474859 /* CupcakeCornerApp.swift */; };
 		550F60E72595C11500474859 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60E62595C11500474859 /* ContentView.swift */; };
 		550F60E92595C11900474859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550F60E82595C11900474859 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5508C570259D693D006DDC12 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
+		5508C573259D69B4006DDC12 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
 		550F60E12595C11500474859 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		550F60E42595C11500474859 /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		550F60E62595C11500474859 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				550F6102259AC1C000474859 /* Order.swift */,
 				550F6105259AC5E300474859 /* AddressView.swift */,
 				550F6108259AC77700474859 /* CheckoutView.swift */,
+				5508C570259D693D006DDC12 /* OrderDetails.swift */,
+				5508C573259D69B4006DDC12 /* NewOrder.swift */,
 			);
 			path = CupcakeCorner;
 			sourceTree = "<group>";
@@ -164,10 +170,12 @@
 				550F60FD25982E8200474859 /* ITunesQuery.swift in Sources */,
 				550F60E72595C11500474859 /* ContentView.swift in Sources */,
 				550F60E52595C11500474859 /* CupcakeCornerApp.swift in Sources */,
+				5508C571259D693D006DDC12 /* OrderDetails.swift in Sources */,
 				550F6106259AC5E300474859 /* AddressView.swift in Sources */,
 				550F6100259AC18300474859 /* UserClass.swift in Sources */,
 				550F6103259AC1C000474859 /* Order.swift in Sources */,
 				550F6109259AC77700474859 /* CheckoutView.swift in Sources */,
+				5508C574259D69B4006DDC12 /* NewOrder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
